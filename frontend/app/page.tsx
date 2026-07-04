@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-
+import GraphMap from '@/components/GraphMap';
 export default function Page() {
   return (
     <div className="flex min-h-svh p-6">
