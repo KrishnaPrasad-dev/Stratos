@@ -1,7 +1,22 @@
 from pydantic import BaseModel, Field
-from typing import Dict, Any
+from typing import Dict, Any, List, Optional
 from uuid import UUID
 from datetime import datetime
+
+
+class StartupSetupCreate(BaseModel):
+    company_name: str = Field(..., example="Northstar Labs")
+    category: str = Field(..., example="SaaS")
+    target_competitors: List[str] = Field(default_factory=list, example=["Acme", "Nova"])
+
+
+class StartupSetup(StartupSetupCreate):
+    id: UUID
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
 
 # --- NODE SCHEMAS ---
 class NodeBase(BaseModel):

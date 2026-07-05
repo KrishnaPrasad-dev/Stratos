@@ -70,7 +70,6 @@ export default function DashboardPage() {
           <p className="mt-2">{statusMessage}</p>
         </div>
         <div className="flex-1">
-          {/* THE FIX IS RIGHT HERE: Passing a string instead of an array */}
           <SignalFeed competitors={Array.isArray(setup?.target_competitors) ? setup.target_competitors.join(', ') : setup?.target_competitors || 'OpenAI, Anthropic'} />
         </div>
       </aside>
